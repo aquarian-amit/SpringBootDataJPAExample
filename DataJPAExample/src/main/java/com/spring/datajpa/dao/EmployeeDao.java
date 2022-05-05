@@ -28,6 +28,7 @@ public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 	@Query("SELECT COUNT(E.salary), E.firstName FROM Employee E GROUP BY E.firstName")
 	public List<Object[]> getGroupedEmployees();
 	
+	
 	//@Query("SELECT COUNT(*) FROM Employee")
 	@Query("SELECT COUNT(DISTINCT E.firstName) FROM Employee E")
 	public List getCountOfemployees();
